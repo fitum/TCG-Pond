@@ -1,0 +1,1603 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for TCG Pond — a Pokémon TCG storefront built with React, TypeScript, and Vite.">
+      
+      
+      
+      
+        <link rel="prev" href="../getting-started/">
+      
+      
+        <link rel="next" href="../deployment/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Usage - TCG Pond</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usage-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="TCG Pond" class="md-header__button md-logo" aria-label="TCG Pond" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TCG Pond
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../configuration/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Configuration
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../api/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting-started/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../doc-assistant/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Documentation System
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TCG Pond" class="md-nav__button md-logo" aria-label="TCG Pond" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TCG Pond
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#browsing-the-shop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browsing the Shop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Browsing the Shop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcg-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCG tabs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sorting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pagination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-detail-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product Detail Page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cart
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart-drawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cart drawer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cart page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checkout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Checkout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-shipping-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Shipping information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-payment-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Payment details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-order-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Order confirmation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-order-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account &amp; Order History
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account &amp; Order History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging out
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catalogue-maintenance-developer-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catalogue Maintenance (Developer Tasks)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Catalogue Maintenance (Developer Tasks)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-single-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a single card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-sealed-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a sealed product
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-a-new-tcg-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling a new TCG tab
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../doc-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#browsing-the-shop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browsing the Shop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Browsing the Shop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcg-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCG tabs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sorting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pagination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-detail-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product Detail Page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cart
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart-drawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cart drawer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cart-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cart page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checkout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Checkout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-shipping-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Shipping information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-payment-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Payment details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-order-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Order confirmation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-order-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account &amp; Order History
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account &amp; Order History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging out
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catalogue-maintenance-developer-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catalogue Maintenance (Developer Tasks)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Catalogue Maintenance (Developer Tasks)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-single-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a single card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-sealed-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a sealed product
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-a-new-tcg-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling a new TCG tab
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="usage-guide">Usage Guide<a class="headerlink" href="#usage-guide" title="Permanent link">&para;</a></h1>
+<p>This guide covers the everyday workflows in TCG Pond — browsing and filtering products, managing your cart, checking out, and viewing your order history. It also covers common catalogue maintenance tasks for developers.</p>
+<hr />
+<h2 id="browsing-the-shop">Browsing the Shop<a class="headerlink" href="#browsing-the-shop" title="Permanent link">&para;</a></h2>
+<p>Navigate to <strong>Shop</strong> (header link or <code>/shop</code>). The page opens on the first enabled TCG tab.</p>
+<h3 id="tcg-tabs">TCG tabs<a class="headerlink" href="#tcg-tabs" title="Permanent link">&para;</a></h3>
+<p>If more than one TCG is enabled, a tab row appears at the top of the shop. Click a tab to switch game catalogues. Each tab has its own set of products, filter state, and URL parameter (<code>?tcg=pokemon</code>).</p>
+<h3 id="search">Search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h3>
+<p>Type in the <strong>Search cards…</strong> box to filter by card name or set name. The search is case-insensitive and updates results immediately.</p>
+<h3 id="filters">Filters<a class="headerlink" href="#filters" title="Permanent link">&para;</a></h3>
+<p>Click the <strong>Filters</strong> button (funnel icon) on mobile or use the sidebar on desktop to open the filter panel. Available filters:</p>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Category</strong></td>
+<td>Singles only, sealed only, or both</td>
+</tr>
+<tr>
+<td><strong>Set</strong></td>
+<td>Restrict to one expansion set</td>
+</tr>
+<tr>
+<td><strong>Rarity</strong></td>
+<td>Common, Uncommon, Rare, Ultra Rare, etc.</td>
+</tr>
+<tr>
+<td><strong>Price range</strong></td>
+<td>Minimum and maximum price in USD</td>
+</tr>
+<tr>
+<td><strong>New arrivals</strong></td>
+<td>Only products added within the last 30 days</td>
+</tr>
+</tbody>
+</table>
+<p>All filters are reflected in the URL query string, so you can bookmark or share a filtered view.</p>
+<h3 id="sorting">Sorting<a class="headerlink" href="#sorting" title="Permanent link">&para;</a></h3>
+<p>Use the <strong>Sort</strong> dropdown to order results by:</p>
+<ul>
+<li>Price: low → high / high → low</li>
+<li>Name: A → Z / Z → A</li>
+<li>Newest first</li>
+</ul>
+<h3 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Permanent link">&para;</a></h3>
+<p>The shop shows <strong>24 products per page</strong>. Use the numbered pagination controls at the bottom to move between pages. The current page is stored in the <code>?page=</code> query parameter.</p>
+<hr />
+<h2 id="product-detail-page">Product Detail Page<a class="headerlink" href="#product-detail-page" title="Permanent link">&para;</a></h2>
+<p>Click any product card to open its detail page (<code>/product/:id</code>). The page shows:</p>
+<ul>
+<li>Full card name, set, and card number</li>
+<li>Rarity and variant (e.g. Holofoil)</li>
+<li>Condition (Near Mint, Lightly Played, etc.)</li>
+<li>Price and stock count</li>
+<li><strong>Add to Cart</strong> button (disabled when out of stock)</li>
+<li><strong>New Arrival</strong> badge if the card was added within the last 30 days</li>
+</ul>
+<p>Use the browser <strong>Back</strong> button or the breadcrumb to return to the shop with your previous filters intact.</p>
+<hr />
+<h2 id="cart">Cart<a class="headerlink" href="#cart" title="Permanent link">&para;</a></h2>
+<h3 id="adding-items">Adding items<a class="headerlink" href="#adding-items" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Click <strong>Add to Cart</strong> on a product card or the product detail page.</li>
+<li>The cart drawer opens automatically each time an item is added.</li>
+<li>Adding the same product again increments its quantity (capped at available stock).</li>
+</ul>
+<h3 id="cart-drawer">Cart drawer<a class="headerlink" href="#cart-drawer" title="Permanent link">&para;</a></h3>
+<p>The drawer slides in from the right. From here you can:</p>
+<ul>
+<li>Adjust quantity with the <strong>+</strong> / <strong>−</strong> buttons (quantity <strong>0</strong> removes the item)</li>
+<li>Remove an item with the trash icon</li>
+<li>See the running subtotal</li>
+<li>Proceed to <strong>Checkout</strong></li>
+</ul>
+<h3 id="cart-page">Cart page<a class="headerlink" href="#cart-page" title="Permanent link">&para;</a></h3>
+<p>Navigate to <code>/cart</code> for the full-page cart view. It shows the same controls as the drawer plus a breakdown of items and totals.</p>
+<h3 id="persistence">Persistence<a class="headerlink" href="#persistence" title="Permanent link">&para;</a></h3>
+<p>The cart is saved to <code>localStorage</code> under the key <code>tcg-pond-cart</code>. It survives page reloads and browser restarts. To clear it manually, run this in the browser console:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="s1">&#39;tcg-pond-cart&#39;</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h2 id="checkout">Checkout<a class="headerlink" href="#checkout" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Login not required</p>
+<p>You can check out as a guest — the site does not enforce authentication at checkout. However, your order will only be saved to the Account page if you are logged in.</p>
+</div>
+<h3 id="step-1-shipping-information">Step 1 — Shipping information<a class="headerlink" href="#step-1-shipping-information" title="Permanent link">&para;</a></h3>
+<p>Fill in:</p>
+<ul>
+<li>Full name</li>
+<li>Street address</li>
+<li>City</li>
+<li>ZIP / postal code</li>
+<li>Country</li>
+</ul>
+<p>All fields are required. Click <strong>Continue to Payment</strong> to proceed.</p>
+<h3 id="step-2-payment-details">Step 2 — Payment details<a class="headerlink" href="#step-2-payment-details" title="Permanent link">&para;</a></h3>
+<p>Enter card details:</p>
+<ul>
+<li>Card number (16 digits)</li>
+<li>Expiry date (MM/YY)</li>
+<li>CVC (3 digits)</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">No real payment processing</p>
+<p>Stripe packages are installed as placeholders but <strong>no charges are made</strong>. Any 16-digit number, valid-looking expiry, and 3-digit CVC will be accepted. Do not enter real card data.</p>
+</div>
+<p>Click <strong>Place Order</strong> to complete the purchase.</p>
+<h3 id="step-3-order-confirmation">Step 3 — Order confirmation<a class="headerlink" href="#step-3-order-confirmation" title="Permanent link">&para;</a></h3>
+<p>A success screen displays your <strong>order ID</strong> (format <code>ORD-XXXXXXX</code>), the order total, and a link back to the shop. The cart is automatically cleared.</p>
+<p><strong>Free shipping</strong> is applied when the cart subtotal is <strong>$50.00 or more</strong>; otherwise a flat $4.99 shipping fee is added.</p>
+<hr />
+<h2 id="account-order-history">Account &amp; Order History<a class="headerlink" href="#account-order-history" title="Permanent link">&para;</a></h2>
+<h3 id="registering">Registering<a class="headerlink" href="#registering" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click the <strong>person icon</strong> in the header, or the <strong>Sign In</strong> / <strong>Register</strong> link.</li>
+<li>Switch to the <strong>Register</strong> tab.</li>
+<li>Enter your name, email address, and a password.</li>
+<li>Click <strong>Create Account</strong>.</li>
+</ol>
+<p><em>Expected outcome:</em> The modal closes and your name appears in the header. The simulated registration accepts any non-empty values.</p>
+<h3 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click the <strong>person icon</strong> in the header.</li>
+<li>Enter your email and password.</li>
+<li>Click <strong>Sign In</strong>.</li>
+</ol>
+<p>The simulated login accepts any email/password combination, as long as neither field is empty. It reuses the same account (by email) across sessions.</p>
+<h3 id="order-history">Order history<a class="headerlink" href="#order-history" title="Permanent link">&para;</a></h3>
+<p>Navigate to <code>/account</code> while logged in. The page lists all orders placed in the current session, with:</p>
+<ul>
+<li>Order ID</li>
+<li>Date placed</li>
+<li>Items and quantities</li>
+<li>Shipping address</li>
+<li>Order total</li>
+<li>Status badge (<code>pending</code>, <code>processing</code>, <code>shipped</code>, <code>delivered</code>)</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Order history is persisted in <code>localStorage</code> under <code>tcg-pond-auth</code>. It survives page reloads but is tied to the browser — it will not sync across devices.</p>
+</div>
+<h3 id="logging-out">Logging out<a class="headerlink" href="#logging-out" title="Permanent link">&para;</a></h3>
+<p>Click your name in the header → <strong>Sign Out</strong>. This clears the user session and order history from state (and from <code>localStorage</code>).</p>
+<hr />
+<h2 id="catalogue-maintenance-developer-tasks">Catalogue Maintenance (Developer Tasks)<a class="headerlink" href="#catalogue-maintenance-developer-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="adding-a-single-card">Adding a single card<a class="headerlink" href="#adding-a-single-card" title="Permanent link">&para;</a></h3>
+<p>Open <code>src/data/products.ts</code> and append a row to the <code>raw</code> array inside the <code>addTCG('pokemon')</code> wrapper:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Single card</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">[</span><span class="s1">&#39;Charizard ex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Scarlet &amp; Violet Base&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;006/258&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Double Rare&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Holofoil&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Near Mint&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">89.99</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2026-04-06&#39;</span><span class="p">],</span>
+</code></pre></div>
+<p>Field order: <code>name, set, cardNumber, rarity, variance, condition, marketPrice, priceOverride, stock, dateAdded</code></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cardNumber</code></td>
+<td>Leave <code>''</code> for sealed products — this auto-sets <code>category = 'sealed'</code></td>
+</tr>
+<tr>
+<td><code>priceOverride</code></td>
+<td>Set to a non-zero value to override <code>marketPrice</code>; <code>0</code> uses market price</td>
+</tr>
+<tr>
+<td><code>dateAdded</code></td>
+<td><code>YYYY-MM-DD</code> — products within 30 days of the reference date get an <strong>isNew</strong> badge</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adding-a-sealed-product">Adding a sealed product<a class="headerlink" href="#adding-a-sealed-product" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Sealed product — empty cardNumber</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">[</span><span class="s1">&#39;Scarlet &amp; Violet Booster Box&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Scarlet &amp; Violet Base&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Near Mint&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">149.99</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2026-04-06&#39;</span><span class="p">],</span>
+</code></pre></div>
+<h3 id="enabling-a-new-tcg-tab">Enabling a new TCG tab<a class="headerlink" href="#enabling-a-new-tcg-tab" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open <code>src/data/tcgConfig.ts</code>.</li>
+<li>
+<p>Set <code>enabled: true</code> for the desired game.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;mtg&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Magic: The Gathering&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">primary</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#1D4ED8&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">accent</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#D97706&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">enabled</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">},</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add products for that TCG to <code>src/data/products.ts</code> using the matching <code>addTCG('mtg')</code> wrapper.</p>
+</li>
+<li>Save the files — the dev server will hot-reload and the new tab will appear in the shop.</li>
+</ol>
+<p>See the <a href="../../configuration/">Configuration reference</a> for full details on TCG flags and design tokens.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

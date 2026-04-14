@@ -1,0 +1,2282 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for TCG Pond — a Pokémon TCG storefront built with React, TypeScript, and Vite.">
+      
+      
+      
+      
+        <link rel="prev" href="../configuration/">
+      
+      
+        <link rel="next" href="../guides/getting-started/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>API Reference - TCG Pond</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TCG Pond" class="md-header__button md-logo" aria-label="TCG Pond" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TCG Pond
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../configuration/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Configuration
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../guides/getting-started/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../doc-assistant/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Documentation System
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TCG Pond" class="md-nav__button md-logo" aria-label="TCG Pond" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TCG Pond
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#typescript-types-srctypesindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript Types (src/types/index.ts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TypeScript Types (src/types/index.ts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcgkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCGKey
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productcategory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProductCategory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cardcondition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CardCondition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OrderStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcgconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCGConfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CartItem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OrderItem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cart-store-srcstorecartstorets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cart Store (src/store/cartStore.ts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cart Store (src/store/cartStore.ts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additemproduct-product-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        addItem(product: Product): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removeitemproductid-string-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        removeItem(productId: string): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatequantityproductid-string-quantity-number-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        updateQuantity(productId: string, quantity: number): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearcart-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clearCart(): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opencart-void-closecart-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openCart(): void / closeCart(): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totalitems-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totalItems(): number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totalprice-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totalPrice(): number
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auth-store-srcstoreauthstorets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth Store (src/store/authStore.ts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Auth Store (src/store/authStore.ts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loginemail-string-password-string-promiseboolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        login(email: string, password: string): Promise&lt;boolean&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registername-string-email-string-password-string-promiseboolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        register(name: string, email: string, password: string): Promise&lt;boolean&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logout-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logout(): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addorderorder-order-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        addOrder(order: Order): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openauthmode-login-register-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openAuth(mode?: 'login' | 'register'): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closeauth-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        closeAuth(): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-helpers-srcdataproductsts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Helpers (src/data/products.ts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Helpers (src/data/products.ts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#products-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        products: Product[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getproductbyidid-string-product-undefined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getProductById(id: string): Product | undefined
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getuniquesetstcg-string-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getUniqueSets(tcg?: string): string[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getuniqueraritiestcg-string-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getUniqueRarities(tcg?: string): string[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcg-config-helpers-srcdatatcgconfigts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCG Config Helpers (src/data/tcgConfig.ts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCG Config Helpers (src/data/tcgConfig.ts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcg_config-tcgconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCG_CONFIG: TCGConfig[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabledtcgs-tcgconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        enabledTCGs: TCGConfig[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettcgconfigkey-string-tcgconfig-undefined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getTCGConfig(key: string): TCGConfig | undefined
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Props
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Props">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productcard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProductCard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcgtabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCGTabs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shopfilters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ShopFilters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartdrawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CartDrawer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authmodal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AuthModal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-query-parameters-shoppage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL Query Parameters (ShopPage)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../doc-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#typescript-types-srctypesindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript Types (src/types/index.ts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TypeScript Types (src/types/index.ts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcgkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCGKey
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productcategory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProductCategory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cardcondition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CardCondition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OrderStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcgconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCGConfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CartItem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OrderItem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cart-store-srcstorecartstorets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cart Store (src/store/cartStore.ts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cart Store (src/store/cartStore.ts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additemproduct-product-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        addItem(product: Product): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removeitemproductid-string-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        removeItem(productId: string): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatequantityproductid-string-quantity-number-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        updateQuantity(productId: string, quantity: number): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearcart-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clearCart(): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opencart-void-closecart-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openCart(): void / closeCart(): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totalitems-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totalItems(): number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totalprice-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totalPrice(): number
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auth-store-srcstoreauthstorets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth Store (src/store/authStore.ts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Auth Store (src/store/authStore.ts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loginemail-string-password-string-promiseboolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        login(email: string, password: string): Promise&lt;boolean&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registername-string-email-string-password-string-promiseboolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        register(name: string, email: string, password: string): Promise&lt;boolean&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logout-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logout(): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addorderorder-order-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        addOrder(order: Order): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openauthmode-login-register-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openAuth(mode?: 'login' | 'register'): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closeauth-void" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        closeAuth(): void
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-helpers-srcdataproductsts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Helpers (src/data/products.ts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Helpers (src/data/products.ts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#products-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        products: Product[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getproductbyidid-string-product-undefined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getProductById(id: string): Product | undefined
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getuniquesetstcg-string-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getUniqueSets(tcg?: string): string[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getuniqueraritiestcg-string-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getUniqueRarities(tcg?: string): string[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcg-config-helpers-srcdatatcgconfigts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCG Config Helpers (src/data/tcgConfig.ts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCG Config Helpers (src/data/tcgConfig.ts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcg_config-tcgconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCG_CONFIG: TCGConfig[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabledtcgs-tcgconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        enabledTCGs: TCGConfig[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettcgconfigkey-string-tcgconfig-undefined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getTCGConfig(key: string): TCGConfig | undefined
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Props
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Props">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productcard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProductCard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcgtabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCGTabs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shopfilters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ShopFilters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartdrawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CartDrawer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authmodal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AuthModal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-query-parameters-shoppage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL Query Parameters (ShopPage)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h1>
+<p>This page documents every public type, store, data helper, and component prop interface in TCG Pond.</p>
+<hr />
+<h2 id="typescript-types-srctypesindexts">TypeScript Types (<code>src/types/index.ts</code>)<a class="headerlink" href="#typescript-types-srctypesindexts" title="Permanent link">&para;</a></h2>
+<h3 id="tcgkey"><code>TCGKey</code><a class="headerlink" href="#tcgkey" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">type</span><span class="w"> </span><span class="nx">TCGKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pokemon&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;onePiece&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;dragonball&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;yugioh&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;mtg&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Union of all supported trading card game identifiers. Used as the <code>tcg</code> field on <code>Product</code> and as a URL query parameter.</p>
+<hr />
+<h3 id="productcategory"><code>ProductCategory</code><a class="headerlink" href="#productcategory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">type</span><span class="w"> </span><span class="nx">ProductCategory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;single&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;sealed&#39;</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li><code>'single'</code> — an individual trading card</li>
+<li><code>'sealed'</code> — a factory-sealed product (booster pack, box, etc.)</li>
+</ul>
+<hr />
+<h3 id="cardcondition"><code>CardCondition</code><a class="headerlink" href="#cardcondition" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">type</span><span class="w"> </span><span class="nx">CardCondition</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;Near Mint&#39;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;Lightly Played&#39;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;Moderately Played&#39;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;Heavily Played&#39;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;Damaged&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Standard TCG grading scale from best (<code>Near Mint</code>) to worst (<code>Damaged</code>).</p>
+<hr />
+<h3 id="orderstatus"><code>OrderStatus</code><a class="headerlink" href="#orderstatus" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">type</span><span class="w"> </span><span class="nx">OrderStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;processing&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;shipped&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;delivered&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Lifecycle stages of an order. Currently set to <code>'pending'</code> at checkout creation.</p>
+<hr />
+<h3 id="tcgconfig"><code>TCGConfig</code><a class="headerlink" href="#tcgconfig" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">TCGConfig</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">TCGKey</span><span class="p">;</span><span class="w">      </span><span class="c1">// Internal identifier</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">    </span><span class="c1">// Display name (e.g. &quot;Pokémon&quot;)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nx">primary</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">  </span><span class="c1">// Primary brand colour (hex)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nx">accent</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">   </span><span class="c1">// Accent brand colour (hex)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nx">enabled</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"> </span><span class="c1">// Whether to show this TCG in the shop</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>One entry per supported game in <code>tcgConfig.ts</code>.</p>
+<hr />
+<h3 id="product"><code>Product</code><a class="headerlink" href="#product" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">Product</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">              </span><span class="c1">// Derived: &quot;&lt;tcg&gt;-&lt;set slug&gt;-&lt;cardNumber or name slug&gt;&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">            </span><span class="c1">// Card or product name</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nx">tcg</span><span class="o">:</span><span class="w"> </span><span class="kt">TCGKey</span><span class="p">;</span><span class="w">             </span><span class="c1">// Which game this belongs to</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nx">set</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">             </span><span class="c1">// Set/expansion name</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nx">cardNumber?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">     </span><span class="c1">// Collector number (omitted for sealed)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nx">rarity?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">         </span><span class="c1">// Rarity tier (omitted for sealed)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nx">variance?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">       </span><span class="c1">// Print variant (e.g. &quot;Holofoil&quot;, &quot;Normal&quot;)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nx">condition</span><span class="o">:</span><span class="w"> </span><span class="kt">CardCondition</span><span class="p">;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w">           </span><span class="c1">// USD — priceOverride if set, else marketPrice</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nx">stock</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w">           </span><span class="c1">// Units available</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="kt">ProductCategory</span><span class="p">;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="nx">isNew</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w">          </span><span class="c1">// true if dateAdded within 30 days of reference date</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="nx">dateAdded</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">       </span><span class="c1">// ISO 8601 date string (YYYY-MM-DD)</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="cartitem"><code>CartItem</code><a class="headerlink" href="#cartitem" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">CartItem</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nx">product</span><span class="o">:</span><span class="w"> </span><span class="kt">Product</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nx">quantity</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="address"><code>Address</code><a class="headerlink" href="#address" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">Address</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">    </span><span class="c1">// Recipient full name</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nx">street</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">  </span><span class="c1">// Street address</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nx">zip</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">     </span><span class="c1">// ZIP or postal code</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="nx">country</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="orderitem"><code>OrderItem</code><a class="headerlink" href="#orderitem" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">OrderItem</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nx">productId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w">    </span><span class="c1">// Price at time of purchase</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="nx">quantity</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="order"><code>Order</code><a class="headerlink" href="#order" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">Order</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">          </span><span class="c1">// Format: &quot;ORD-&lt;7 alphanumeric chars&gt;&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nx">items</span><span class="o">:</span><span class="w"> </span><span class="kt">OrderItem</span><span class="p">[];</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nx">total</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w">       </span><span class="c1">// Grand total including shipping</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="kt">OrderStatus</span><span class="p">;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="kt">Address</span><span class="p">;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="nx">createdAt</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">   </span><span class="c1">// ISO 8601 datetime string</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="user"><code>User</code><a class="headerlink" href="#user" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w">    </span><span class="c1">// btoa(email) — deterministic, not cryptographically secure</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="cart-store-srcstorecartstorets">Cart Store (<code>src/store/cartStore.ts</code>)<a class="headerlink" href="#cart-store-srcstorecartstorets" title="Permanent link">&para;</a></h2>
+<p>Zustand store. Access via the <code>useCartStore</code> hook.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useCartStore</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../store/cartStore&#39;</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="state">State<a class="headerlink" href="#state" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>items</code></td>
+<td><code>CartItem[]</code></td>
+<td>Current cart contents (persisted)</td>
+</tr>
+<tr>
+<td><code>isOpen</code></td>
+<td><code>boolean</code></td>
+<td>Whether the <code>CartDrawer</code> overlay is visible</td>
+</tr>
+</tbody>
+</table>
+<h3 id="actions">Actions<a class="headerlink" href="#actions" title="Permanent link">&para;</a></h3>
+<h4 id="additemproduct-product-void"><code>addItem(product: Product): void</code><a class="headerlink" href="#additemproduct-product-void" title="Permanent link">&para;</a></h4>
+<p>Adds a product to the cart. If it already exists, increments quantity up to <code>product.stock</code>. Also sets <code>isOpen = true</code> to show the drawer.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">addItem</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCartStore</span><span class="p">();</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nx">addItem</span><span class="p">(</span><span class="nx">product</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h4 id="removeitemproductid-string-void"><code>removeItem(productId: string): void</code><a class="headerlink" href="#removeitemproductid-string-void" title="Permanent link">&para;</a></h4>
+<p>Removes the cart line for the given product ID entirely.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">removeItem</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCartStore</span><span class="p">();</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nx">removeItem</span><span class="p">(</span><span class="s1">&#39;pokemon-ascended-heroes-038-217&#39;</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h4 id="updatequantityproductid-string-quantity-number-void"><code>updateQuantity(productId: string, quantity: number): void</code><a class="headerlink" href="#updatequantityproductid-string-quantity-number-void" title="Permanent link">&para;</a></h4>
+<p>Sets the quantity for a cart line. If <code>quantity &lt;= 0</code>, the item is removed via <code>removeItem</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">updateQuantity</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCartStore</span><span class="p">();</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nx">updateQuantity</span><span class="p">(</span><span class="nx">productId</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h4 id="clearcart-void"><code>clearCart(): void</code><a class="headerlink" href="#clearcart-void" title="Permanent link">&para;</a></h4>
+<p>Empties the cart (used after a successful order).</p>
+<hr />
+<h4 id="opencart-void-closecart-void"><code>openCart(): void</code> / <code>closeCart(): void</code><a class="headerlink" href="#opencart-void-closecart-void" title="Permanent link">&para;</a></h4>
+<p>Show or hide the <code>CartDrawer</code> overlay.</p>
+<hr />
+<h4 id="totalitems-number"><code>totalItems(): number</code><a class="headerlink" href="#totalitems-number" title="Permanent link">&para;</a></h4>
+<p>Returns the sum of all item quantities.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCartStore</span><span class="p">((</span><span class="nx">s</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">totalItems</span><span class="p">());</span>
+</code></pre></div>
+<hr />
+<h4 id="totalprice-number"><code>totalPrice(): number</code><a class="headerlink" href="#totalprice-number" title="Permanent link">&para;</a></h4>
+<p>Returns the cart subtotal in USD.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">subtotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCartStore</span><span class="p">((</span><span class="nx">s</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">totalPrice</span><span class="p">());</span>
+</code></pre></div>
+<hr />
+<h2 id="auth-store-srcstoreauthstorets">Auth Store (<code>src/store/authStore.ts</code>)<a class="headerlink" href="#auth-store-srcstoreauthstorets" title="Permanent link">&para;</a></h2>
+<p>Zustand store. Access via the <code>useAuthStore</code> hook.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useAuthStore</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../store/authStore&#39;</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="state_1">State<a class="headerlink" href="#state_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user</code></td>
+<td><code>User \| null</code></td>
+<td>Currently signed-in user (<code>null</code> = guest)</td>
+</tr>
+<tr>
+<td><code>orders</code></td>
+<td><code>Order[]</code></td>
+<td>Order history for the current user</td>
+</tr>
+<tr>
+<td><code>isAuthOpen</code></td>
+<td><code>boolean</code></td>
+<td>Whether the <code>AuthModal</code> is visible</td>
+</tr>
+<tr>
+<td><code>authMode</code></td>
+<td><code>'login' \| 'register'</code></td>
+<td>Which form the modal displays</td>
+</tr>
+</tbody>
+</table>
+<h3 id="actions_1">Actions<a class="headerlink" href="#actions_1" title="Permanent link">&para;</a></h3>
+<h4 id="loginemail-string-password-string-promiseboolean"><code>login(email: string, password: string): Promise&lt;boolean&gt;</code><a class="headerlink" href="#loginemail-string-password-string-promiseboolean" title="Permanent link">&para;</a></h4>
+<p>Simulated login with a 600 ms delay. Accepts any non-empty email/password pair. Returns <code>true</code> on success and closes the modal.</p>
+<blockquote>
+<p>Replace the function body with a real <code>fetch</code> call when a backend is available.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">login</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useAuthStore</span><span class="p">();</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">login</span><span class="p">(</span><span class="s1">&#39;user@example.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;secret&#39;</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h4 id="registername-string-email-string-password-string-promiseboolean"><code>register(name: string, email: string, password: string): Promise&lt;boolean&gt;</code><a class="headerlink" href="#registername-string-email-string-password-string-promiseboolean" title="Permanent link">&para;</a></h4>
+<p>Simulated registration. Returns <code>true</code> on success and closes the modal.</p>
+<hr />
+<h4 id="logout-void"><code>logout(): void</code><a class="headerlink" href="#logout-void" title="Permanent link">&para;</a></h4>
+<p>Clears <code>user</code> and <code>orders</code> from state and localStorage.</p>
+<hr />
+<h4 id="addorderorder-order-void"><code>addOrder(order: Order): void</code><a class="headerlink" href="#addorderorder-order-void" title="Permanent link">&para;</a></h4>
+<p>Appends an order to the user's history. Called by <code>CheckoutPage</code> after payment.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">addOrder</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useAuthStore</span><span class="p">();</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nx">addOrder</span><span class="p">(</span><span class="nx">newOrder</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h4 id="openauthmode-login-register-void"><code>openAuth(mode?: 'login' | 'register'): void</code><a class="headerlink" href="#openauthmode-login-register-void" title="Permanent link">&para;</a></h4>
+<p>Opens the <code>AuthModal</code>. Defaults to <code>'login'</code> mode.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nx">openAuth</span><span class="p">(</span><span class="s1">&#39;register&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// open the sign-up form</span>
+</code></pre></div>
+<hr />
+<h4 id="closeauth-void"><code>closeAuth(): void</code><a class="headerlink" href="#closeauth-void" title="Permanent link">&para;</a></h4>
+<p>Hides the <code>AuthModal</code>.</p>
+<hr />
+<h2 id="data-helpers-srcdataproductsts">Data Helpers (<code>src/data/products.ts</code>)<a class="headerlink" href="#data-helpers-srcdataproductsts" title="Permanent link">&para;</a></h2>
+<h3 id="products-product"><code>products: Product[]</code><a class="headerlink" href="#products-product" title="Permanent link">&para;</a></h3>
+<p>The full catalogue array, parsed from the internal <code>RawRow[]</code> tuple format at module load.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">products</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../data/products&#39;</span><span class="p">;</span>
+</code></pre></div>
+<hr />
+<h3 id="getproductbyidid-string-product-undefined"><code>getProductById(id: string): Product | undefined</code><a class="headerlink" href="#getproductbyidid-string-product-undefined" title="Permanent link">&para;</a></h3>
+<p>Returns the product matching the given ID, or <code>undefined</code> if not found.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">getProductById</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../data/products&#39;</span><span class="p">;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getProductById</span><span class="p">(</span><span class="s1">&#39;pokemon-ascended-heroes-038-217&#39;</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h3 id="getuniquesetstcg-string-string"><code>getUniqueSets(tcg?: string): string[]</code><a class="headerlink" href="#getuniquesetstcg-string-string" title="Permanent link">&para;</a></h3>
+<p>Returns a sorted array of unique set names, optionally filtered to a specific TCG key.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">getUniqueSets</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../data/products&#39;</span><span class="p">;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getUniqueSets</span><span class="p">(</span><span class="s1">&#39;pokemon&#39;</span><span class="p">);</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1">// [&#39;Aquapolis&#39;, &#39;Ascended Heroes&#39;, ...]</span>
+</code></pre></div>
+<hr />
+<h3 id="getuniqueraritiestcg-string-string"><code>getUniqueRarities(tcg?: string): string[]</code><a class="headerlink" href="#getuniqueraritiestcg-string-string" title="Permanent link">&para;</a></h3>
+<p>Returns a sorted array of unique rarity strings, optionally filtered to a specific TCG key.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">getUniqueRarities</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../data/products&#39;</span><span class="p">;</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">rarities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getUniqueRarities</span><span class="p">(</span><span class="s1">&#39;pokemon&#39;</span><span class="p">);</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1">// [&#39;Common&#39;, &#39;Double Rare&#39;, &#39;Hyper Rare&#39;, ...]</span>
+</code></pre></div>
+<hr />
+<h2 id="tcg-config-helpers-srcdatatcgconfigts">TCG Config Helpers (<code>src/data/tcgConfig.ts</code>)<a class="headerlink" href="#tcg-config-helpers-srcdatatcgconfigts" title="Permanent link">&para;</a></h2>
+<h3 id="tcg_config-tcgconfig"><code>TCG_CONFIG: TCGConfig[]</code><a class="headerlink" href="#tcg_config-tcgconfig" title="Permanent link">&para;</a></h3>
+<p>Master array of all TCG entries (enabled and disabled).</p>
+<hr />
+<h3 id="enabledtcgs-tcgconfig"><code>enabledTCGs: TCGConfig[]</code><a class="headerlink" href="#enabledtcgs-tcgconfig" title="Permanent link">&para;</a></h3>
+<p>Filtered subset of <code>TCG_CONFIG</code> where <code>enabled === true</code>. Used by <code>TCGTabs</code> and <code>ShopPage</code> to determine which games to show.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">enabledTCGs</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../data/tcgConfig&#39;</span><span class="p">;</span>
+</code></pre></div>
+<hr />
+<h3 id="gettcgconfigkey-string-tcgconfig-undefined"><code>getTCGConfig(key: string): TCGConfig | undefined</code><a class="headerlink" href="#gettcgconfigkey-string-tcgconfig-undefined" title="Permanent link">&para;</a></h3>
+<p>Looks up a <code>TCGConfig</code> by its key. Returns <code>undefined</code> if not found.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">getTCGConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../data/tcgConfig&#39;</span><span class="p">;</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cfg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getTCGConfig</span><span class="p">(</span><span class="s1">&#39;pokemon&#39;</span><span class="p">);</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="c1">// { key: &#39;pokemon&#39;, label: &#39;Pokémon&#39;, primary: &#39;#CC0000&#39;, ... }</span>
+</code></pre></div>
+<hr />
+<h2 id="component-props">Component Props<a class="headerlink" href="#component-props" title="Permanent link">&para;</a></h2>
+<h3 id="productcard"><code>ProductCard</code><a class="headerlink" href="#productcard" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">Props</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span><span class="nx">product</span><span class="o">:</span><span class="w"> </span><span class="kt">Product</span><span class="p">;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>Renders a product tile with rarity badge, name, set, price, stock count, and an "Add to Cart" button. Navigates to <code>/product/:id</code> on click.</p>
+<hr />
+<h3 id="tcgtabs"><code>TCGTabs</code><a class="headerlink" href="#tcgtabs" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">Props</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">  </span><span class="nx">activeTCG?</span><span class="o">:</span><span class="w"> </span><span class="kt">TCGKey</span><span class="p">;</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>Renders a horizontally scrollable row of pill buttons, one per enabled TCG. Navigates to <code>/shop?tcg=&lt;key&gt;</code> on selection. Returns <code>null</code> when fewer than two TCGs are enabled.</p>
+<hr />
+<h3 id="shopfilters"><code>ShopFilters</code><a class="headerlink" href="#shopfilters" title="Permanent link">&para;</a></h3>
+<p>No external props. Reads and writes URL search params directly via <code>useSearchParams</code>. Calls <code>getUniqueSets</code> and <code>getUniqueRarities</code> with the current <code>tcg</code> param to populate dropdowns.</p>
+<hr />
+<h3 id="cartdrawer"><code>CartDrawer</code><a class="headerlink" href="#cartdrawer" title="Permanent link">&para;</a></h3>
+<p>No props. Reads state from <code>useCartStore</code>. Renders as a fixed right-side overlay with a backdrop. Returns <code>null</code> when <code>isOpen</code> is <code>false</code>.</p>
+<hr />
+<h3 id="authmodal"><code>AuthModal</code><a class="headerlink" href="#authmodal" title="Permanent link">&para;</a></h3>
+<p>No props. Reads state from <code>useAuthStore</code>. Renders as a centred modal overlay. Returns <code>null</code> when <code>isAuthOpen</code> is <code>false</code>.</p>
+<hr />
+<h2 id="url-query-parameters-shoppage">URL Query Parameters (ShopPage)<a class="headerlink" href="#url-query-parameters-shoppage" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tcg</code></td>
+<td><code>TCGKey</code></td>
+<td>Active game tab</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>'single' \| 'sealed'</code></td>
+<td>Filter by product category</td>
+</tr>
+<tr>
+<td><code>rarity</code></td>
+<td><code>string</code></td>
+<td>Filter by rarity name</td>
+</tr>
+<tr>
+<td><code>set</code></td>
+<td><code>string</code></td>
+<td>Filter by set/expansion name</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td><code>'price-asc' \| 'price-desc' \| 'name-asc' \| 'name-desc' \| 'new'</code></td>
+<td>Sort order</td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td><code>string</code></td>
+<td>Full-text search (name and set)</td>
+</tr>
+<tr>
+<td><code>new</code></td>
+<td><code>'true'</code></td>
+<td>Show new arrivals only</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td><code>number</code></td>
+<td>Minimum price filter</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td><code>number</code></td>
+<td>Maximum price filter</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td><code>number</code></td>
+<td>Current page (1-indexed, 24 per page)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

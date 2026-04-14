@@ -1,0 +1,1505 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for TCG Pond — a Pokémon TCG storefront built with React, TypeScript, and Vite.">
+      
+      
+      
+      
+        <link rel="prev" href="../deployment/">
+      
+      
+        <link rel="next" href="../../doc-assistant/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Troubleshooting - TCG Pond</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#troubleshooting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="TCG Pond" class="md-header__button md-logo" aria-label="TCG Pond" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TCG Pond
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Troubleshooting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../configuration/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Configuration
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../api/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting-started/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../doc-assistant/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Documentation System
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TCG Pond" class="md-nav__button md-logo" aria-label="TCG Pond" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TCG Pond
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#npm-install-fails-with-peer-dependency-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        npm install fails with peer dependency errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npm-install-is-very-slow-or-hangs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        npm install is very slow or hangs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enametoolong-on-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ENAMETOOLONG on Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-server-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Server Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Server Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-5173-is-already-in-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port 5173 is already in use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blank-page-at-httplocalhost5173" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blank page at http://localhost:5173
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-not-reflecting-in-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changes not reflecting in the browser
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript-errors-in-the-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript errors in the terminal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#npm-run-build-fails-with-typescript-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        npm run build fails with TypeScript errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-output-is-unexpectedly-large" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build output is unexpectedly large
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-browser-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime / Browser Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime / Browser Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cart-items-disappear-on-reload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cart items disappear on reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth-state-login-orders-is-lost-on-reload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth state (login, orders) is lost on reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#products-show-out-of-stock-for-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Products show "Out of Stock" for everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-products-appear-in-the-shop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No products appear in the shop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-loads-but-all-routes-except-return-404" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App loads but all routes except / return 404
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assets-return-404-after-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assets return 404 after deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#still-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Still Stuck?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../doc-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#npm-install-fails-with-peer-dependency-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        npm install fails with peer dependency errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npm-install-is-very-slow-or-hangs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        npm install is very slow or hangs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enametoolong-on-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ENAMETOOLONG on Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-server-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Server Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Server Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-5173-is-already-in-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port 5173 is already in use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blank-page-at-httplocalhost5173" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blank page at http://localhost:5173
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-not-reflecting-in-the-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changes not reflecting in the browser
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript-errors-in-the-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript errors in the terminal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#npm-run-build-fails-with-typescript-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        npm run build fails with TypeScript errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-output-is-unexpectedly-large" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build output is unexpectedly large
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-browser-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime / Browser Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime / Browser Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cart-items-disappear-on-reload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cart items disappear on reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth-state-login-orders-is-lost-on-reload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth state (login, orders) is lost on reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#products-show-out-of-stock-for-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Products show "Out of Stock" for everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-products-appear-in-the-shop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No products appear in the shop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-loads-but-all-routes-except-return-404" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App loads but all routes except / return 404
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assets-return-404-after-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assets return 404 after deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#still-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Still Stuck?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
+<p>This page covers the most common problems encountered when installing, developing, building, or deploying TCG Pond.</p>
+<hr />
+<h2 id="installation-issues">Installation Issues<a class="headerlink" href="#installation-issues" title="Permanent link">&para;</a></h2>
+<h3 id="npm-install-fails-with-peer-dependency-errors"><code>npm install</code> fails with peer dependency errors<a class="headerlink" href="#npm-install-fails-with-peer-dependency-errors" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> The terminal shows <code>ERESOLVE</code> or peer dependency conflict errors.</p>
+<p><strong>Fix:</strong> Use the <code>--legacy-peer-deps</code> flag:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>--legacy-peer-deps
+</code></pre></div>
+<p>If the error persists, ensure you are on Node.js 18 or later:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>node<span class="w"> </span>-v<span class="w">   </span><span class="c1"># should print v18.x.x or higher</span>
+</code></pre></div>
+<hr />
+<h3 id="npm-install-is-very-slow-or-hangs"><code>npm install</code> is very slow or hangs<a class="headerlink" href="#npm-install-is-very-slow-or-hangs" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> npm appears to stall, especially on the first install.</p>
+<p><strong>Fixes:</strong></p>
+<ul>
+<li>Check your internet connection.</li>
+<li>
+<p>Clear the npm cache and retry:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm<span class="w"> </span>cache<span class="w"> </span>clean<span class="w"> </span>--force
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>npm<span class="w"> </span>install
+</code></pre></div>
+</li>
+<li>
+<p>If you are behind a corporate proxy, configure it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npm<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>proxy<span class="w"> </span>http://proxy.company.com:8080
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>npm<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>https-proxy<span class="w"> </span>http://proxy.company.com:8080
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="enametoolong-on-windows"><code>ENAMETOOLONG</code> on Windows<a class="headerlink" href="#enametoolong-on-windows" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> File paths inside <code>node_modules</code> exceed the Windows 260-character limit.</p>
+<p><strong>Fix:</strong> Enable long path support:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># Run as Administrator</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">git</span> <span class="n">config</span> <span class="p">-</span><span class="n">-system</span> <span class="n">core</span><span class="p">.</span><span class="n">longpaths</span> <span class="n">true</span>
+</code></pre></div>
+<p>Then delete <code>node_modules</code> and reinstall:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rmdir<span class="w"> </span>/s<span class="w"> </span>/q<span class="w"> </span>node_modules
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>npm<span class="w"> </span>install
+</code></pre></div>
+<hr />
+<h2 id="development-server-issues">Development Server Issues<a class="headerlink" href="#development-server-issues" title="Permanent link">&para;</a></h2>
+<h3 id="port-5173-is-already-in-use">Port 5173 is already in use<a class="headerlink" href="#port-5173-is-already-in-use" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Error: listen EADDRINUSE: address already in use :::5173
+</code></pre></div>
+<p><strong>Fix:</strong> Either stop the process using the port, or start the server on a different port:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>npm<span class="w"> </span>run<span class="w"> </span>dev<span class="w"> </span>--<span class="w"> </span>--port<span class="w"> </span><span class="m">3000</span>
+</code></pre></div>
+<hr />
+<h3 id="blank-page-at-httplocalhost5173">Blank page at <code>http://localhost:5173</code><a class="headerlink" href="#blank-page-at-httplocalhost5173" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> The browser shows a white/blank page with no error in the UI.</p>
+<p><strong>Fixes:</strong></p>
+<ol>
+<li>Open the browser developer console (<code>F12</code> → Console tab) and look for JavaScript errors.</li>
+<li>Check the terminal where <code>npm run dev</code> is running for compilation errors.</li>
+<li>Hard-refresh the browser: <code>Ctrl+Shift+R</code> (Windows/Linux) or <code>Cmd+Shift+R</code> (macOS).</li>
+<li>
+<p>Clear <code>localStorage</code> and reload:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<h3 id="changes-not-reflecting-in-the-browser">Changes not reflecting in the browser<a class="headerlink" href="#changes-not-reflecting-in-the-browser" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> You edited a file but the browser still shows the old version.</p>
+<p><strong>Fixes:</strong></p>
+<ul>
+<li>Vite's HMR should update the page automatically. If it does not, try a manual refresh.</li>
+<li>Confirm the dev server is still running in the terminal (no errors, no "disconnected" message).</li>
+<li>Check that you saved the file (Vite watches disk writes, not unsaved buffer state).</li>
+</ul>
+<hr />
+<h3 id="typescript-errors-in-the-terminal">TypeScript errors in the terminal<a class="headerlink" href="#typescript-errors-in-the-terminal" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> The dev server starts but prints red TypeScript errors.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Vite does <strong>not</strong> block the dev server on TypeScript errors — the app may still run with type errors present. However, <code>npm run build</code> will fail.</p>
+</div>
+<p><strong>Fix:</strong> Read the error message carefully — it includes the file path and line number. Common causes:</p>
+<ul>
+<li><strong>Missing type import</strong> — add the import with the <code>type</code> keyword.</li>
+<li><strong>Wrong product tuple length</strong> — ensure all 10 fields are present when adding a row to <code>products.ts</code>.</li>
+<li><strong>Invalid TCG key</strong> — <code>tcg</code> values must be one of <code>'pokemon' | 'onePiece' | 'dragonball' | 'yugioh' | 'mtg'</code>.</li>
+</ul>
+<hr />
+<h2 id="build-issues">Build Issues<a class="headerlink" href="#build-issues" title="Permanent link">&para;</a></h2>
+<h3 id="npm-run-build-fails-with-typescript-errors"><code>npm run build</code> fails with TypeScript errors<a class="headerlink" href="#npm-run-build-fails-with-typescript-errors" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> The build exits with <code>error TS...</code> messages.</p>
+<p><strong>Fix:</strong> Fix all TypeScript errors before building. Run the type checker in watch mode to find issues quickly:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>npx<span class="w"> </span>tsc<span class="w"> </span>--noEmit<span class="w"> </span>--watch
+</code></pre></div>
+<hr />
+<h3 id="build-output-is-unexpectedly-large">Build output is unexpectedly large<a class="headerlink" href="#build-output-is-unexpectedly-large" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> The <code>dist/assets/index-xxxx.js</code> file is larger than ~500 kB (gzipped).</p>
+<p><strong>Likely cause:</strong> A large data file (e.g. <code>products.ts</code> with thousands of rows) is included in the bundle.</p>
+<p><strong>Fix:</strong> Consider lazy-loading data or paginating at the data source rather than in the browser.</p>
+<hr />
+<h2 id="runtime-browser-issues">Runtime / Browser Issues<a class="headerlink" href="#runtime-browser-issues" title="Permanent link">&para;</a></h2>
+<h3 id="cart-items-disappear-on-reload">Cart items disappear on reload<a class="headerlink" href="#cart-items-disappear-on-reload" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> Items you added to the cart are gone after a page refresh.</p>
+<p><strong>Likely causes and fixes:</strong></p>
+<ol>
+<li><code>localStorage</code> is disabled in the browser (e.g. in private/incognito mode with strict settings). Check: <code>window.localStorage</code> — if it throws, storage is blocked.</li>
+<li>The <code>tcg-pond-cart</code> key was manually removed. Re-add items to the cart.</li>
+<li>A browser extension is clearing storage. Disable extensions and retry.</li>
+</ol>
+<hr />
+<h3 id="auth-state-login-orders-is-lost-on-reload">Auth state (login, orders) is lost on reload<a class="headerlink" href="#auth-state-login-orders-is-lost-on-reload" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> You are logged out unexpectedly, or your order history disappears.</p>
+<p><strong>Fix:</strong> Same causes as the cart issue above — check <code>localStorage</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// Browser console</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;tcg-pond-auth&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;{}&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>If the value is <code>null</code>, <code>localStorage</code> is unavailable or was cleared.</p>
+<hr />
+<h3 id="products-show-out-of-stock-for-everything">Products show "Out of Stock" for everything<a class="headerlink" href="#products-show-out-of-stock-for-everything" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> Every product card shows the out-of-stock state.</p>
+<p><strong>Likely cause:</strong> The <code>stock</code> field for all products in <code>src/data/products.ts</code> is <code>0</code>.</p>
+<p><strong>Fix:</strong> Verify that product rows have a non-zero <code>stock</code> value:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">[</span><span class="s1">&#39;Pikachu ex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Scarlet &amp; Violet Base&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;057/217&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Double Rare&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Holofoil&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Near Mint&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">9.14</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2026-04-01&#39;</span><span class="p">],</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1">//                                                                                                   ^</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">//                                                                                              stock = 1</span>
+</code></pre></div>
+<hr />
+<h3 id="no-products-appear-in-the-shop">No products appear in the shop<a class="headerlink" href="#no-products-appear-in-the-shop" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> The shop page is empty — no cards, no "no results" message, just blank.</p>
+<p><strong>Likely causes:</strong></p>
+<ol>
+<li>
+<p><strong>Wrong TCG key on products.</strong> Every product's <code>tcg</code> field must match the <code>key</code> of an enabled TCG in <code>tcgConfig.ts</code>. Mismatched keys (e.g. <code>'Pokemon'</code> vs <code>'pokemon'</code>) will cause products to be silently excluded.</p>
+</li>
+<li>
+<p><strong>Stale filter state in the URL.</strong> Check the URL for unexpected query parameters (e.g. <code>?rarity=SomeRarityThatDoesntExist</code>). Clear them by navigating to <code>/shop</code>.</p>
+</li>
+<li>
+<p><strong>TCG disabled.</strong> Ensure <code>enabled: true</code> is set for the relevant entry in <code>TCG_CONFIG</code>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="deployment-issues">Deployment Issues<a class="headerlink" href="#deployment-issues" title="Permanent link">&para;</a></h2>
+<h3 id="app-loads-but-all-routes-except-return-404">App loads but all routes except <code>/</code> return 404<a class="headerlink" href="#app-loads-but-all-routes-except-return-404" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> Navigating directly to <code>/shop</code> or <code>/cart</code> returns a 404 from the server.</p>
+<p><strong>Cause:</strong> The server is not configured to redirect all paths to <code>index.html</code>.</p>
+<p><strong>Fix:</strong> Add the SPA redirect rule for your platform:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Netlify (_redirects)</label><label for="__tabbed_1_2">Cloudflare Pages (_redirects)</label><label for="__tabbed_1_3">nginx</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/*  /index.html  200
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/*  /index.html  200
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="kn">try_files</span><span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$uri/</span><span class="w"> </span><span class="s">/index.html</span><span class="p">;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Place <code>_redirects</code> in the <code>public/</code> folder so Vite copies it to <code>dist/</code> during the build.</p>
+<hr />
+<h3 id="assets-return-404-after-deployment">Assets return 404 after deployment<a class="headerlink" href="#assets-return-404-after-deployment" title="Permanent link">&para;</a></h3>
+<p><strong>Symptom:</strong> The page loads but images or scripts return 404 errors.</p>
+<p><strong>Likely cause:</strong> The <code>base</code> path in <code>vite.config.ts</code> does not match the deployment subdirectory.</p>
+<p><strong>Fix:</strong> If the app is hosted at <code>https://example.com/tcg-pond/</code>, set the base:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">// vite.config.ts</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">({</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nx">base</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;/tcg-pond/&#39;</span><span class="p">,</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">react</span><span class="p">()],</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">})</span>
+</code></pre></div>
+<p>Rebuild and redeploy after changing this value.</p>
+<hr />
+<h2 id="still-stuck">Still Stuck?<a class="headerlink" href="#still-stuck" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Search the <a href="https://github.com/vitejs/vite/issues">Vite issues tracker</a> for your error message.</li>
+<li>Check the <a href="https://reactrouter.com/">React Router docs</a> for routing-specific problems.</li>
+<li>Open the browser DevTools <strong>Network</strong> tab to inspect failing requests.</li>
+<li>Check the <strong>Console</strong> tab for the exact JavaScript error and stack trace.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
