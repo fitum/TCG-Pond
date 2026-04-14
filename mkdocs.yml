@@ -1,0 +1,44 @@
+site_name: TCG Pond
+site_description: Documentation for TCG Pond — a Pokémon TCG storefront built with React, TypeScript, and Vite.
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: red
+    accent: yellow
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Configuration: configuration.md
+  - API Reference: api/index.md
+  - Guides:
+    - Getting Started: guides/getting-started.md
+    - Usage: guides/usage.md
+    - Deployment: guides/deployment.md
+    - Troubleshooting: guides/troubleshooting.md
